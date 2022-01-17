@@ -81,7 +81,7 @@ const deviceData = [
         tags: ['realtime']
     },*/
     {
-        name: '卓器机器人2021',
+        name: '卓器机器人202',
         deviceId: 'ZQ202',
         //manufactor: '卓器机器人',
         //learnMore: 'https://www.espressif.com/',
