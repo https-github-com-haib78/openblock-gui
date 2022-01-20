@@ -10,29 +10,6 @@ import iconv from 'iconv-lite';
  */
 export default function (vm) {
 
-    //气泵
-    ScratchBlocks.Arduino['arduino_pinZQ_zq202qibeng'] = function(block) {
-    var arg0 = block.getFieldValue('PIN') || '0';
-    var arg1 = block.getFieldValue('LEVEL') || 'High';
-    ScratchBlocks.Arduino.setups_['zq202qibeng' + arg0] = 'pinMode(' + arg0 + ', OUTPUT);';
-    var code = "digitalWrite(" + arg0 + ", " + arg1 + ");\n";
-    return code;
-  };
-  
-  //蜂鸣器端口需修改
-  ScratchBlocks.Arduino['arduino_pinZQ_zq202buzzer'] = function(block) {
-    ScratchBlocks.Arduino.setups_['zq202qibeng'] = 'pinMode( 5 , OUTPUT);';
-    var code = "digitalWrite(5);\n";
-    return code;
-  };
-  
-    //运行键端口须修改
-    ScratchBlocks.Arduino['arduino_pinZQ_zq202run'] = function(block) {
-        ScratchBlocks.Arduino.setups_['zq202qibeng'] = 'pinMode( 2 , INPUT);';
-    var code = "digitalRead(2);\n";
-    return [code, ScratchBlocks.Arduino.ORDER_ATOMIC];
-  };
-
     const jsonForMenuBlock = function (name, menuOptionsFn, colors, start) {
         return {
             message0: '%1',
