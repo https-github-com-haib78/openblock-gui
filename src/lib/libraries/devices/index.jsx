@@ -83,6 +83,8 @@ const deviceData = [
     {
         name: '卓器机器人202',
         deviceId: 'ZQ202',
+        //deviceExtensionsCompatible:'ZQ202',  //设备扩展插件界面将同时加载支持主板
+        deviceExtensions: ['ZQrobot202'],  //自动添加插件
         //manufactor: '卓器机器人',
         //learnMore: 'https://www.espressif.com/',
         type: 'arduino',
@@ -97,10 +99,10 @@ const deviceData = [
         featured: true,
         disabled: false,
         //bluetoothRequired: false,
-        //serialportRequired: true,
+        serialportRequired: true,
         defaultBaudRate: '115200',
-        //internetConnectionRequired: false,
-        launchPeripheralConnectionFlow: false,
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: true,
         useAutoScan: false,
         connectionIconURL: ZQ202ConnectionIconURLL,
         connectionSmallIconURL: ZQ202ConnectionSmallIconURL,
@@ -114,8 +116,8 @@ const deviceData = [
         baseToolBoxXml: arduinoBaseToolBox,
         programMode: ['upload'],
         programLanguage: ['block'],
-        tags: ['arduino'],
-        //helpLink: 'https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html'
+        tags: ['arduino '],
+        helpLink: 'https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html'
     },
     {
         name: 'Esp32',
@@ -133,11 +135,11 @@ const deviceData = [
         //),
         featured: true,
         disabled: false,
-        //bluetoothRequired: false,
-        //serialportRequired: true,
+        bluetoothRequired: false,
+        serialportRequired: true,
         defaultBaudRate: '115200',
-        //internetConnectionRequired: false,
-        launchPeripheralConnectionFlow: false,
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: true,
         useAutoScan: false,
         connectionIconURL: esp32ConnectionIconURLL,
         connectionSmallIconURL: esp32ConnectionSmallIconURL,
@@ -150,9 +152,9 @@ const deviceData = [
         ),
         baseToolBoxXml: arduinoBaseToolBox,
         programMode: ['upload'],
-        programLanguage: ['block'],
+        //programLanguage: ['block'],
         tags: ['arduino'],
-        //helpLink: 'https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html'
+        helpLink: 'https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html'
     },/*
     {
         name: 'Arduino Uno',

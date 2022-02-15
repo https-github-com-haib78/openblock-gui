@@ -45,15 +45,21 @@ const messages = defineMessages({
         defaultMessage: 'Display',
         description: 'Display tag to filter all display libraries.'
     },
-    communicationTag: {
+    communicationTag:{
         id: 'gui.library.communicationTag',
         defaultMessage: 'Communication',
         description: 'Communication tag to filter all communication libraries.'
+        //defaultMessage: '卓器',
     },
     otherTag: {
         id: 'gui.library.otherTag',
         defaultMessage: 'Other',
         description: 'Other tag to filter all other libraries.'
+    },
+    ZQrobotTag: {
+        id: 'gui.library.ZQrobotTag',
+        defaultMessage: 'ZQrobot',
+        description: 'ZQrobot tag to filter all other libraries.'
     }
 });
 
@@ -63,8 +69,9 @@ const SENSOR_TAG = {tag: 'sensor', intlLabel: messages.sensorTag};
 const DISPLAY_TAG = {tag: 'display', intlLabel: messages.displayTag};
 const COMMUNICATION_TAG = {tag: 'communication', intlLabel: messages.communicationTag};
 const OTHER_TAG = {tag: 'other', intlLabel: messages.otherTag};
-const tagListPrefix = [SHIELD_TAG, ACTUATOR_TAG, SENSOR_TAG, DISPLAY_TAG, COMMUNICATION_TAG, OTHER_TAG];
-
+const ZQrobot_TAG = {tag: 'ZQrobot',intlLabel: messages.ZQrobotTag };
+const tagListPrefix = [SHIELD_TAG, ACTUATOR_TAG, SENSOR_TAG, DISPLAY_TAG, COMMUNICATION_TAG, OTHER_TAG,ZQrobot_TAG];
+//const tagListPrefix = [DISPLAY_TAG,ZQ202_TAG];
 class ExtensionLibrary extends React.PureComponent {
     constructor (props) {
         super(props);

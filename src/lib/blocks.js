@@ -9,7 +9,7 @@ import iconv from 'iconv-lite';
  * @return {ScratchBlocks} ScratchBlocks connected with the vm
  */
 export default function (vm) {
-
+    
     const jsonForMenuBlock = function (name, menuOptionsFn, colors, start) {
         return {
             message0: '%1',
@@ -264,6 +264,7 @@ export default function (vm) {
                     options.sort(ScratchBlocks.scratchBlocksUtils.compareStrings);
                 };
                 // Get all the stage variables (no lists) so we can add them to menu when the stage is selected.
+                //得到所有阶段变量(没有列出),所以我们可以将它们添加到菜单选择阶段。
                 const stageVariableOptions = vm.runtime.getTargetForStage().getAllVariableNamesInScopeByType('');
                 sort(stageVariableOptions);
                 const stageVariableMenuItems = stageVariableOptions.map(variable => [variable, variable]);
@@ -271,6 +272,9 @@ export default function (vm) {
                     // There's a block dropped on top of the menu. It'd be nice to evaluate it and
                     // return the correct list, but that is tricky. Scratch2 just returns stage options
                     // so just do that here too.
+                    //有一块掉在菜单的顶部。它会很高兴评估
+                    //返回正确的列表,但这是棘手的。Scratch2只是返回阶段选项
+                    //这里就这么做了。
                     return stageOptions.concat(stageVariableMenuItems);
                 }
                 const menuBlock = lookupBlocks.getBlock(sensingOfBlock.inputs.OBJECT.shadow);
@@ -279,6 +283,7 @@ export default function (vm) {
                     return stageOptions.concat(stageVariableMenuItems);
                 }
                 // Get all the local variables (no lists) and add them to the menu.
+                //获得所有的局部变量(没有列出),并将它们添加到菜单。
                 const target = vm.runtime.getSpriteTargetByName(selectedItem);
                 let spriteVariableOptions = [];
                 // The target should exist, but there are ways for it not to (e.g. #4203).

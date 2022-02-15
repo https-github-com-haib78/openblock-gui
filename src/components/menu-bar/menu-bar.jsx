@@ -767,7 +767,9 @@ class MenuBar extends React.Component {
                             src={screenshotIcon}
                         />
                     </div>
+                    {/*
                     <Divider className={classNames(styles.divider)} />
+                    
                     <div
                         className={classNames(styles.menuBarItem, this.props.isRealtimeMode &&
                             this.props.peripheralName ? styles.hoverable : styles.disabled)}
@@ -797,7 +799,7 @@ class MenuBar extends React.Component {
                             src={helpIcon}
                         />
                         <FormattedMessage {...ariaMessages.tutorials} />
-                    </div>
+                    </div>*/}
                     <Divider className={classNames(styles.divider)} />
                     <div className={classNames(styles.menuBarItem, styles.programModeGroup)}>
                         <Switch

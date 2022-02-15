@@ -75,6 +75,8 @@ class LibraryItemComponent extends React.PureComponent {
                     <br />
                     <span className={styles.featuredDescription}>{this.props.description}</span>
                 </div>
+                {/*设备选择下面的信息显示 如系统需求 编程语言等 */}
+                {/*
                 {this.props.bluetoothRequired || this.props.serialportRequired ||
                     this.props.internetConnectionRequired || this.props.collaborator || this.props.manufactor ? (
                         <div className={styles.featuredExtensionMetadataFirstRow}>
@@ -141,6 +143,7 @@ class LibraryItemComponent extends React.PureComponent {
                             </div>
                         </div>
                     ) : null}
+                
                 {this.props.author || this.props.version ? (
                     <div className={styles.featuredExtensionMetadataFirstRow}>
                         <div className={styles.featuredExtensionVersion}>
@@ -313,7 +316,7 @@ class LibraryItemComponent extends React.PureComponent {
                             </div>
                         )}
                     </div>
-                ) : null}
+                ) : null}*/}
             </div>
         ) : (
             <Box

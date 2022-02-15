@@ -37,6 +37,8 @@ const ModalComponent = props => (
                             styles.headerItemHelp
                         )}
                     >
+                        {/*设备连接界面左上角帮助提示 */}
+                        {/*
                         <Button
                             className={styles.helpButton}
                             iconSrc={helpIcon}
@@ -48,6 +50,7 @@ const ModalComponent = props => (
                                 id="gui.modal.help"
                             />
                         </Button>
+                        */}
                     </div>
                 ) : null}
                 <div
