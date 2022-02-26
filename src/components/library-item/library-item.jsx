@@ -275,7 +275,7 @@ class LibraryItemComponent extends React.PureComponent {
                             </div>
                         ) : null}
                     </div>
-                ) : null}
+                ) : null}*/}
                 {this.props.isUnloadble ? (
                     <div className={styles.featuredExtensionMetadataTailRow}>
                         {this.props.isProcessing ? (
@@ -316,7 +316,7 @@ class LibraryItemComponent extends React.PureComponent {
                             </div>
                         )}
                     </div>
-                ) : null}*/}
+                ) : null}
             </div>
         ) : (
             <Box
