@@ -44,6 +44,10 @@ import ZQ202IconURL from './ZQ202/ZQ202.png';
 import ZQ202ConnectionIconURLL from './ZQ202/ZQ202-illustration.svg';
 import ZQ202ConnectionSmallIconURL from './ZQ202/ZQ202-small.svg';
 
+import ZQ201IconURL from './ZQ201/ZQ201.png';
+import ZQ201ConnectionIconURLL from './ZQ201/ZQ201-illustration.svg';
+import ZQ201ConnectionSmallIconURL from './ZQ201/ZQ201-small.svg';
+
 import esp8266IconURL from './esp8266/esp8266.png';
 import esp8266ConnectionIconURL from './esp8266/esp8266-illustration.svg';
 import esp8266ConnectionSmallIconURL from './esp8266/esp8266-small.svg';
@@ -80,6 +84,7 @@ const deviceData = [
         programLanguage: ['block'],
         tags: ['realtime']
     },*/
+    /*
     {
         name: '卓器机器人202',
         deviceId: 'ZQ202',
@@ -120,29 +125,21 @@ const deviceData = [
         helpLink: 'https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html'
     },
     {
-        name: 'Esp32',
-        deviceId: 'arduinoEsp32',
-        //manufactor: '卓器机器人',
-        //learnMore: 'https://www.espressif.com/',
+        name: '卓器机器人201',
+        deviceId: 'ZQ201',
+        //deviceExtensions: ['ZQrobot202'],  //自动添加插件
         type: 'arduino',
-        iconURL: esp32IconURL,
-        //description: (
-            //<FormattedMessage
-                //defaultMessage="Wi-Fi & Bluetooth control board with rich functions."
-                //description="Description for the esp32 device"
-                //id="gui.device.arduinoEsp32.description"
-            ///>
-        //),
+        iconURL: ZQ201IconURL,
         featured: true,
         disabled: false,
-        bluetoothRequired: false,
+        //bluetoothRequired: false,
         serialportRequired: true,
         defaultBaudRate: '115200',
         internetConnectionRequired: false,
         launchPeripheralConnectionFlow: true,
         useAutoScan: false,
-        connectionIconURL: esp32ConnectionIconURLL,
-        connectionSmallIconURL: esp32ConnectionSmallIconURL,
+        connectionIconURL: ZQ201ConnectionIconURLL,
+        connectionSmallIconURL: ZQ201ConnectionSmallIconURL,
         connectingMessage: (
             <FormattedMessage
                 defaultMessage="Connecting"
@@ -152,24 +149,25 @@ const deviceData = [
         ),
         baseToolBoxXml: arduinoBaseToolBox,
         programMode: ['upload'],
-        //programLanguage: ['block'],
-        tags: ['arduino'],
-        helpLink: 'https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html'
-    },/*
+        programLanguage: ['block'],
+        tags: ['arduino '],
+        //helpLink: 'https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html'
+    },
+    */
     {
         name: 'Arduino Uno',
         deviceId: 'arduinoUno',
-        //manufactor: 'arduino.cc',
-        //learnMore: 'https://store.arduino.cc/usa/arduino-uno-rev3',
+        manufactor: 'arduino.cc',
+        learnMore: 'https://store.arduino.cc/usa/arduino-uno-rev3',
         type: 'arduino',
         iconURL: arduinoUnoIconURL,
-        //description: (
-            //<FormattedMessage
-                //defaultMessage="A great board to get started with electronics and coding."
-                //description="Description for the Arduino Uno device"
-                //id="gui.device.arduinoUno.description"
-            ///>
-        //),
+        description: (
+            <FormattedMessage
+                defaultMessage="A great board to get started with electronics and coding."
+                description="Description for the Arduino Uno device"
+                id="gui.device.arduinoUno.description"
+            />
+        ),
         featured: true,
         disabled: false,
         //bluetoothRequired: false,  //蓝牙连接图标
@@ -180,18 +178,18 @@ const deviceData = [
         useAutoScan: false,
         connectionIconURL: arduinoUnoConnectionIconURLL,
         connectionSmallIconURL: arduinoUnoConnectionSmallIconURL,
-        //connectingMessage: (
-            //<FormattedMessage
-                //defaultMessage="Connecting"
-                //description="Message to help people connect to their arduino."
-                //id="gui.device.arduino.connectingMessage"
-            ///>
-        //),
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their arduino."
+                id="gui.device.arduino.connectingMessage"
+            />
+        ),
         baseToolBoxXml: arduinoBaseToolBox,
         programMode: ['upload'],
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
-        //helpLink: 'https://store.arduino.cc/usa/arduino-uno-rev3'
+        helpLink: 'https://store.arduino.cc/usa/arduino-uno-rev3'
     },
     {
         name: 'Arduino Nano',
@@ -226,11 +224,11 @@ const deviceData = [
             />
         ),
         baseToolBoxXml: arduinoBaseToolBox,
-        programMode: ['realtime', 'upload'],
+        programMode: ['upload', 'realtime'],
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
         helpLink: 'https://store.arduino.cc/usa/arduino-nano'
-    }*//*
+    },
     {
         name: 'Arduino Mini',
         deviceId: 'arduinoMini_arduinoUno',
@@ -265,12 +263,11 @@ const deviceData = [
             />
         ),
         baseToolBoxXml: arduinoBaseToolBox,
-        programMode: ['realtime', 'upload'],
+        programMode: ['upload', 'realtime'],
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
         helpLink: 'https://store.arduino.cc/usa/arduino-nano'
-    },*/
-    /*
+    },
     {
         name: 'Arduino Leonardo',
         deviceId: 'arduinoLeonardo',
@@ -344,9 +341,45 @@ const deviceData = [
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
         helpLink: 'https://store.arduino.cc/usa/mega-2560-r3'
-    },*/
-    
-    /*
+    },
+    {
+        name: 'Esp32',
+        deviceId: 'arduinoEsp32',
+        //manufactor: '卓器机器人',
+        deviceExtensions:['apds9960'],
+        learnMore: 'https://www.espressif.com/',
+        type: 'arduino',
+        iconURL: esp32IconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Wi-Fi & Bluetooth control board with rich functions."
+                description="Description for the esp32 device"
+                id="gui.device.arduinoEsp32.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: false,
+        serialportRequired: true,
+        defaultBaudRate: '115200',
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: esp32ConnectionIconURLL,
+        connectionSmallIconURL: esp32ConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their esp32."
+                id="gui.device.arduinoEsp32.connectingMessage"
+            />
+        ),
+        baseToolBoxXml: arduinoBaseToolBox,
+        programMode: ['upload'],
+        //programLanguage: ['block'],
+        tags: ['arduino'],
+        helpLink: 'https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html'
+    },
     {
         name: 'ESP8266',
         deviceId: 'arduinoEsp8266',
@@ -494,11 +527,11 @@ const deviceData = [
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
         helpLink: 'https://makeymakey.com'
-    },*/
+    },
     /**
      * For those parent devices that exist in VM but are not displayed in GUI
      */
-    /*
+    
     {
         deviceId: 'arduinoUnoUltra',
         type: 'arduino',
@@ -506,7 +539,7 @@ const deviceData = [
         disabled: false,
         hide: true,
         baseToolBoxXml: arduinoBaseToolBox
-    }*/
+    }
 ];
 
 /**
@@ -514,7 +547,7 @@ const deviceData = [
  * @param {string} deviceId - the id of the device.
  * @return {string} deviceId - the real device id.
  */
-/*
+
 const analysisRealDeviceId = deviceId => {
     if (deviceId){
         // if the id contain '_' use the string afer the '_'.
@@ -523,7 +556,7 @@ const analysisRealDeviceId = deviceId => {
         }
     }
     return deviceId;
-};*/
+};
 
 /**
  * Make device data from the input data. If it is a buid-in device, return the buid-in
